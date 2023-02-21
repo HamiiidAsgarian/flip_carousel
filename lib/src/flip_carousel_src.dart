@@ -162,19 +162,18 @@ class _FlipCarouselState extends State<FlipCarousel>
                                 color: widget.arrowControllersColor)),
                         onPressed: () async {
                           await _onDrag(ThreeDCarouselCardsDragDirection.right);
-
-                          widget.onChange != null
-                              ? widget.onChange!(_currentIndex)
-                              : () {};
+                          if (widget.onChange != null) {
+                            widget.onChange!(_currentIndex);
+                          }
                         }),
                     IconButton(
                         icon: Icon(Icons.arrow_forward_ios,
                             color: widget.arrowControllersColor),
                         onPressed: () async {
                           await _onDrag(ThreeDCarouselCardsDragDirection.left);
-                          widget.onChange != null
-                              ? widget.onChange!(_currentIndex)
-                              : () {};
+                          if (widget.onChange != null) {
+                            widget.onChange!(_currentIndex);
+                          }
                         })
                   ]),
             ),
@@ -248,7 +247,10 @@ class _FlipCarouselState extends State<FlipCarousel>
                     } else {
                       await _onDrag(ThreeDCarouselCardsDragDirection.right);
                     }
-                    widget.onTap != null ? widget.onTap!() : () {};
+
+                    if (widget.onChange != null) {
+                      widget.onChange!(_currentIndex);
+                    }
                   },
                   child: H3DCard(
                       perspective: widget.perspectiveFactor,

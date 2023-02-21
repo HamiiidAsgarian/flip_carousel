@@ -1,6 +1,6 @@
 name: flip_carousel
-description: Carousel with a 3D-filp animation
-version: 0.0.1
+description: Infinite carousel with a 3D-filp animation. Both widgets and images can be assigned to the widget as inputs. Perspective and the space between cards can be modified.
+version: 0.0.2
 homepage: https://github.com/HamiiidAsgarian/flip_carousel
 
 environment:
