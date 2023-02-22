@@ -238,7 +238,9 @@ class _FlipCarouselState extends State<FlipCarousel>
                     child: _rawItems[nextCardIndex]),
                 GestureDetector(
                   onTap: () {
-                    widget.onTap != null ? widget.onTap!() : () {};
+                    if (widget.onTap != null) {
+                      widget.onTap!();
+                    }
                   },
                   //Top Card is touch sensetive
                   onHorizontalDragEnd: (e) async {
