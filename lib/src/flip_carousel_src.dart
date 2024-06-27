@@ -223,7 +223,7 @@ class _FlipCarouselState extends State<FlipCarousel>
         int nextCardIndex =
             _dragDirection == ThreeDCarouselCardsDragDirection.right
                 ? _rawItems.length - 1
-                : 1;
+                : min(1, _rawItems.length - 1);
         return Hero(
           tag: widget.heroTag,
           child: Container(
